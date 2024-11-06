@@ -1,0 +1,31 @@
+<div class="header">
+  <h1>Round {{ currentRound }}</h1>
+  <div class="score">
+    <h3>Score</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Round</th>
+          <th>Winner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of roundResults">
+          <td>{{ result.round }}</td>
+          <td>{{ result.winner }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="game-controls">
+  <h2>{{ currentPlayer }}'s Turn</h2>
+  <label for="move">Select Move:</label>
+  <div class="select-container">
+    <select id="move" [(ngModel)]="selectedMove">
+      <option *ngFor="let move of moves" [ngValue]="move.name">{{ move.name }}</option>
+    </select>
+  </div>
+  <button (click)="onMoveSelected()" [disabled]="!selectedMove">OK</button>
+</div>

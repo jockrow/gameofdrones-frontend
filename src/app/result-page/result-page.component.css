@@ -1,0 +1,20 @@
+.result-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result-page h2 {
+  margin: 0;
+  font-size: 2em;
+  color: #333;
+}
+
+.result-page p {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #555;
+}
+

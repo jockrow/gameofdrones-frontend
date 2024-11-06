@@ -25,3 +25,34 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+----
+## Install
+```sh
+npm install
+```
+
+## execute
+```sh
+ng serve
+```
+
+## Config
+To avoid troubles with cors, change the port in the target of the api in the src/proxy.conf.json file:
+```json
+{
+  "/api": {
+    "target": "http://localhost:5073",
+    "secure": false
+  }
+}
+
+```
+Parametrize the url api on the app.config.ts file at APP_CONFIG constant:
+Example:
+```ts
+export const APP_CONFIG = {
+  gameMovesUrl: 'http://localhost:5073/api/game'
+};
+
+```

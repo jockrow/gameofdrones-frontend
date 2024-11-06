@@ -1,0 +1,45 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.score {
+  text-align: right;
+}
+
+.score table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.score th,
+.score td {
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: center;
+}
+
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.game-controls h2 {
+  margin: 0;
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+}
+
+.select-container select {
+  padding: 5px;
+  font-size: 1em;
+}
+

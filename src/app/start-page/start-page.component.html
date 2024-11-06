@@ -1,0 +1,13 @@
+<h1>Enter Player's Names</h1>
+<div>
+  <label for="player1">Player 1:</label>
+  <input id="player1" #player1Input [(ngModel)]="player1Name" placeholder="Enter name" (keyup.enter)="onEnterKey()" (input)="validateNames()">
+</div>
+<div>
+  <label for="player2">Player 2:</label>
+  <input id="player2" [(ngModel)]="player2Name" placeholder="Enter name" (keyup.enter)="onEnterKey()" (input)="validateNames()">
+</div>
+<button (click)="startGame()" [disabled]="!player1Name || !player2Name || namesAreSame">Start Game</button>
+<p *ngIf="namesAreSame && (player1Name && player2Name)">
+  ⚠️ The Names must be different
+</p>
