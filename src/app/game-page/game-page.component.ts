@@ -5,7 +5,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Move } from '../models/move.model';
-import { APP_CONFIG } from '../app.config';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-game-page',
@@ -30,7 +30,7 @@ export class GamePageComponent implements OnInit {
   }
 
   fetchMoves() {
-    this.http.get<Move[]>(APP_CONFIG.gameMovesUrl + '/moves')
+    this.http.get<Move[]>(environment.apiUrl + '/moves')
       .subscribe(
         (response) => {
           this.moves = response;

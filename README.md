@@ -1,5 +1,7 @@
 # GameOfDronesApp
 
+Visit the [Game Of Drones Site](https://gameofdrones-frontend.vercel.app/game)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
 
 ## Development server
@@ -48,11 +50,11 @@ To avoid troubles with cors, change the port in the target of the api in the src
 }
 
 ```
-Parametrize the url api on the app.config.ts file at APP_CONFIG constant:
+Parametrize the url api on the src/environments/environment at apiUrl varieble:
 Example:
 ```ts
-export const APP_CONFIG = {
-  gameMovesUrl: 'http://localhost:5073/api/game'
+export const environment = {
+  apiUrl: 'http://localhost:5073/api/game'
 };
 
 ```

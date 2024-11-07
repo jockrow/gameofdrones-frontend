@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { GameService } from '../game.service';
 import { HttpClient, HttpHeaders, HttpClientModule  } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { APP_CONFIG } from '../app.config';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-result-page',
@@ -32,7 +32,7 @@ export class ResultPageComponent implements OnInit {
   sendWinnerToApi() {
     if (!this.hasSentWinner) {
       this.hasSentWinner = true;
-      const apiUrl = APP_CONFIG.gameMovesUrl + '/winner';
+      const apiUrl = environment.apiUrl + '/winner';
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       const body = { WinnerName: this.winnerName };
 
