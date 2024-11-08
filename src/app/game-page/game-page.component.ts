@@ -20,6 +20,7 @@ export class GamePageComponent implements OnInit {
   selectedMove: string = '';
   moves: Move[] = [];
   roundResults: { round: number, winner: string }[] = [];
+  loading: boolean = true;
 
   constructor(private router: Router, private gameService: GameService, private http: HttpClient) {}
 
@@ -30,13 +31,16 @@ export class GamePageComponent implements OnInit {
   }
 
   fetchMoves() {
+    this.loading = true;
     this.http.get<Move[]>(environment.apiUrl + '/moves')
       .subscribe(
         (response) => {
           this.moves = response;
+          this.loading = false;
         },
         (error) => {
           console.error('Failed to load moves:', error);
+          this.loading = false;
         }
       );
   }

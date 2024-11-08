@@ -22,10 +22,15 @@
 <div class="game-controls">
   <h2>{{ currentPlayer }}'s Turn</h2>
   <label for="move">Select Move:</label>
-  <div class="select-container">
+  <div class="select-container" *ngIf="!loading; else loadingTemplate">
     <select id="move" [(ngModel)]="selectedMove">
       <option *ngFor="let move of moves" [ngValue]="move.name">{{ move.name }}</option>
     </select>
   </div>
+
+  <ng-template #loadingTemplate>
+    <p>Loading moves Selection...</p>
+  </ng-template>
+
   <button (click)="onMoveSelected()" [disabled]="!selectedMove">OK</button>
 </div>
