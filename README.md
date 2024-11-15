@@ -1,6 +1,6 @@
-# GameOfDronesApp
+# Rock, Paper, Scissors Game
 
-Visit the [Game Of Drones Site](https://gameofdrones-frontend.vercel.app/game)
+Visit the [Rock, Paper, Scissors Game Site](https://gameofdrones-frontend.vercel.app)
 
 
 Enter to players:
